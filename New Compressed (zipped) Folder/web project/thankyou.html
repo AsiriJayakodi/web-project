@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Sri Lankan Delights</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                Sri Lankan Delights
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="order.html">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="thankyou-section">
+            <div class="container">
+                <div class="thankyou-content">
+                    <i class="fas fa-check-circle"></i>
+                    <h1>Thank You!</h1>
+                    <p>Your order has been placed successfully!</p>
+                    <div class="order-details">
+                        <h3>Order Details</h3>
+                        <div id="order-info">
+                            <!-- Order information will be populated here -->
+                        </div>
+                    </div>
+                    <div class="continue-shopping">
+                        <a href="menu.html" class="cta-button">Continue Shopping</a>
+                        <a href="index.html" class="cta-button">Go to Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +94 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@srilankandelights.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sri Lankan Delights. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get order ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('order_id');
+
+        // Display order information
+        if (orderId) {
+            document.getElementById('order-info').innerHTML = `
+                <p><strong>Order ID:</strong> ${orderId}</p>
+                <p>Your order will be delivered soon. Thank you for choosing Sri Lankan Delights!</p>
+            `;
+        }
+    </script>
+</body>
+</html>

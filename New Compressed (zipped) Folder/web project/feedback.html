@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Feedback - Lanka Daily Foods</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* Styles for feedback.html */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7f6; /* Softer background */
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    header {
+      background: var(--white-color, #fff);
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      color: var(--primary-color, #dc3545);
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    header nav a {
+      color: var(--dark-color, #343a40);
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    header nav a:hover, header nav a.active {
+      color: var(--primary-color, #dc3545);
+    }
+
+    .feedback-section {
+      padding: 3rem 1rem;
+      background-color: var(--white-color, #fff);
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+    .feedback-section h2 {
+      font-size: 2.2rem;
+      color: var(--primary-color, #dc3545);
+      margin-bottom: 0.75rem;
+    }
+    .feedback-section .section-intro {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 650px;
+      margin: 0 auto 2rem auto;
+    }
+    .feedback-form {
+      max-width: 650px; /* Wider form for feedback */
+      margin: 0 auto;
+      text-align: left;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #444;
+    }
+    .form-group label i {
+      margin-right: 0.5rem;
+      color: var(--primary-color, #dc3545);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff; /* Ensure select has background */
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary-color, #dc3545);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+    }
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .form-row {
+      display: flex;
+      gap: 1.25rem;
+    }
+    .form-row .form-group {
+      flex: 1;
+    }
+    .rating-group {
+      margin-bottom: 1.5rem;
+    }
+    .rating-group legend {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #444;
+      font-size: 1.05rem;
+    }
+    .rating-group legend i {
+      margin-right: 0.5rem;
+      color: var(--primary-color, #dc3545);
+    }
+    .feedback-form .submit-btn {
+      display: block;
+      width: 100%;
+      background-color: var(--primary-color, #dc3545);
+      color: var(--white-color, #fff);
+      padding: 0.85rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .feedback-form .submit-btn:hover {
+      background-color: var(--secondary-color, #c82333);
+      transform: translateY(-2px);
+    }
+    .feedback-form .submit-btn i {
+      margin-left: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      background-color: #333;
+      color: #f4f4f4;
+      margin-top: 2rem;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      header nav {
+        margin-top: 1rem;
+      }
+      header nav a {
+        margin: 0 0.75rem;
+        display: block;
+        padding: 0.5rem 0;
+      }
+      .feedback-section {
+        padding: 2rem 1rem;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Lanka Daily Foods</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="booking.html">Book a Table</a>
+        <a href="feedback.html" class="active">Feedback</a>
+        <a href="about.html">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="feedback-section">
+      <div class="container">
+        <h2>Share Your Feedback</h2>
+        <p class="section-intro">
+          Your opinions are important to us! Help us improve by sharing your experience at Lanka Daily Foods.
+        </p>
+        <form action="php/submit_feedback.php" method="POST" class="feedback-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user"></i> Your Name</label>
+              <input type="text" id="name" name="name" placeholder="e.g., Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+              <input type="email" id="email" name="email" placeholder="e.g., jane.smith@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="visitDate"><i class="fas fa-calendar-check"></i> Date of Visit (Optional)</label>
+            <input type="date" id="visitDate" name="visitDate" />
+          </div>
+
+          <fieldset class="rating-group">
+            <legend><i class="fas fa-star-half-alt"></i> Rate Your Experience</legend>
+            <div class="form-group">
+              <label for="rating"><i class="fas fa-concierge-bell"></i> Overall Rating</label>
+              <select id="rating" name="rating" required>
+                <option value="" disabled selected>Select your overall rating</option>
+                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                <option value="4">⭐⭐⭐⭐ Very Good</option>
+                <option value="3">⭐⭐⭐ Good</option>
+                <option value="2">⭐⭐ Fair</option>
+                <option value="1">⭐ Poor</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="foodRating"><i class="fas fa-utensils"></i> Food Quality</label>
+                <select id="foodRating" name="foodRating">
+                  <option value="" disabled selected>Rate the food</option>
+                  <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                  <option value="4">⭐⭐⭐⭐ Very Good</option>
+                  <option value="3">⭐⭐⭐ Good</option>
+                  <option value="2">⭐⭐ Fair</option>
+                  <option value="1">⭐ Poor</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="serviceRating"><i class="fas fa-user-friends"></i> Service Quality</label>
+                <select id="serviceRating" name="serviceRating">
+                  <option value="" disabled selected>Rate the service</option>
+                  <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                  <option value="4">⭐⭐⭐⭐ Very Good</option>
+                  <option value="3">⭐⭐⭐ Good</option>
+                  <option value="2">⭐⭐ Fair</option>
+                  <option value="1">⭐ Poor</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="atmosphereRating"><i class="fas fa-store-alt"></i> Atmosphere</label>
+              <select id="atmosphereRating" name="atmosphereRating">
+                <option value="" disabled selected>Rate the atmosphere</option>
+                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                <option value="4">⭐⭐⭐⭐ Very Good</option>
+                <option value="3">⭐⭐⭐ Good</option>
+                <option value="2">⭐⭐ Fair</option>
+                <option value="1">⭐ Poor</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="review"><i class="fas fa-comments"></i> Your Review & Suggestions</label>
+            <textarea id="review" name="review" placeholder="Tell us more about your experience and any suggestions you have..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="recommend"><i class="fas fa-thumbs-up"></i> Would you recommend us to a friend?</label>
+            <select id="recommend" name="recommend" required>
+              <option value="" disabled selected>Please select an option</option>
+              <option value="yes">Yes, definitely!</option>
+              <option value="maybe">Maybe</option>
+              <option value="no">No, not really</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Feedback <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Lanka Daily Foods. All rights reserved. </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

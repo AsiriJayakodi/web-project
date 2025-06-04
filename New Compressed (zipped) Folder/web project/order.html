@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Lanka Daily Foods</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Lanka Daily Foods</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count-sidebar">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="order-container">
+            <h2>Place Your Order</h2>
+            <form id="orderForm">
+                <section class="order-section">
+                    <h3>Customer Information</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Delivery Address:</label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="special_instructions">Special Instructions (optional):</label>
+                        <textarea id="special_instructions" name="special_instructions" rows="3" placeholder="Any dietary restrictions, delivery notes, etc.?"></textarea>
+                    </div>
+                </section>
+
+                <section class="order-section">
+                    <h3>Order Summary</h3>
+                    <div class="cart-summary">
+                        <div class="cart-items" id="cartItemsSummary"></div>
+                        <div class="cart-total">
+                            <h4>Total Amount:</h4>
+                            <span id="orderTotal">₹0.00</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="order-section">
+                    <h3>Payment Method</h3>
+                    <div class="form-group">
+                        <label for="paymentMethod">Select Payment Method:</label>
+                        <select id="paymentMethod" name="payment_method" required>
+                            <option value="cash" selected>Cash on Delivery</option>
+                            <option value="card">Credit/Debit Card</option>
+                        </select>
+                    </div>
+                    <div id="cardPaymentDetails" style="display: none;">
+                        <h4>Enter Card Details:</h4>
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number:</label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="cardExpiry">Expiry Date (MM/YY):</label>
+                            <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cardCVV">CVV:</label>
+                            <input type="text" id="cardCVV" name="cardCVV" placeholder="XXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="cardName">Name on Card:</label>
+                            <input type="text" id="cardName" name="cardName" placeholder="Full Name on Card">
+                        </div>
+                    </div>
+                </section>
+
+                <button type="submit" class="cta-button" id="placeOrderBtn">Place Order</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@lankadailyfoods.com</p>
+                <p>Phone: +94 112 345 6789</p>
+                <p>Address: 123 Galle Road, Colombo</p>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday: 8:00 AM - 10:00 PM</p>
+                <p>Saturday - Sunday: 9:00 AM - 11:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lanka Daily Foods. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-code.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

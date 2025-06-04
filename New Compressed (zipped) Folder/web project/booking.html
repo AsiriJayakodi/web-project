@@ -1,0 +1,326 @@
+<!-- booking.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Your Table - Lanka Daily Foods</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* Styles for booking.html */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6; /* Softer background for the whole page */
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        header {
+            background: var(--white-color, #fff);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            color: var(--primary-color, #dc3545);
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        header nav a {
+            color: var(--dark-color, #343a40);
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        header nav a:hover, header nav a.active {
+            color: var(--primary-color, #dc3545);
+        }
+
+        .booking-section {
+            padding: 3rem 1rem;
+            background-color: var(--white-color, #fff);
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        .booking-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color, #dc3545);
+            margin-bottom: 0.75rem;
+        }
+        .booking-section .section-intro {
+            font-size: 1.05rem;
+            color: #555;
+            max-width: 650px;
+            margin: 0 auto 2rem auto;
+        }
+        .booking-form {
+            max-width: 550px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #444;
+        }
+        .form-group label i {
+            margin-right: 0.5rem;
+            color: var(--primary-color, #dc3545);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem 0.9rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color, #dc3545);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25); /* Example primary color shadow */
+        }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .form-row {
+            display: flex;
+            gap: 1.25rem;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .booking-form .submit-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-color, #dc3545);
+            color: var(--white-color, #fff);
+            padding: 0.85rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .booking-form .submit-btn:hover {
+            background-color: var(--secondary-color, #c82333); /* Darker shade */
+            transform: translateY(-2px);
+        }
+        .booking-form .submit-btn i {
+            margin-left: 0.5rem;
+        }
+
+        /* Reservation Details Section */
+        .reservation-details {
+            text-align: left;
+            max-width: 700px; /* Adjust as needed */
+            margin: 2.5rem auto 2.5rem auto;
+            padding: 1.5rem;
+            background-color: #f9f9f9; /* Slightly different background */
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .reservation-details h3 {
+            font-size: 1.6rem;
+            color: var(--secondary-color, #5a6268);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .reservation-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .reservation-details li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .reservation-details li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--primary-color, #dc3545);
+        }
+        .reservation-details p {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+        .reservation-details .price-note {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #777;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #333;
+            color: #f4f4f4;
+            margin-top: 2rem;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            header nav {
+                margin-top: 1rem;
+            }
+            header nav a {
+                margin: 0 0.75rem;
+                display: block;
+                padding: 0.5rem 0;
+            }
+            .booking-section {
+                padding: 2rem 1rem;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            .form-row .form-group {
+                margin-bottom: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+  <header>
+        <div class="container">
+            <a href="index.html" class="logo">Lanka Daily Foods</a> 
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="order.html">Order </a>
+                <a href="booking.html" class="active">Book a Table</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="about.html">About Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <div class="container">
+                <h2>Book Your Table</h2>
+                <p class="section-intro">
+                    Reserve your table at Lanka Daily Foods for an unforgettable dining experience. 
+                    Review our reservation options below and then fill out the form to secure your spot. We'll confirm your booking shortly.
+                </p>
+
+                <div class="reservation-details">
+                    <h3><i class="fas fa-info-circle"></i> Reservation Options & Pricing</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-users"></i>
+                            <strong>Standard Table (1-6 Guests):</strong> No reservation fee. Perfect for casual dining and small groups.
+                        </li>
+                        <li>
+                            <i class="fas fa-glass-cheers"></i>
+                            <strong>Large Group Booking (7-15 Guests):</strong> A nominal reservation fee of ₹500 may apply, redeemable against your final bill. Please mention 'Large Group' in special requests.
+                        </li>
+                        <li>
+                            <i class="fas fa-birthday-cake"></i>
+                            <strong>Private Dining Area (Up to 25 Guests):</strong> Ideal for celebrations and events. Minimum spend of ₹5000. Includes dedicated service. Please contact us directly or specify 'Private Dining' in your request for availability.
+                        </li>
+                        <li>
+                            <i class="fas fa-building"></i>
+                            <strong>Conference/Meeting Room (Half-Day/Full-Day):</strong> We also offer spaces for corporate meetings or private events with catering options. 
+                            <br> - Half-Day (4 hours): Starting from ₹3000 (includes basic AV equipment).
+                            <br> - Full-Day (8 hours): Starting from ₹5000 (includes basic AV equipment).
+                            <br>Please specify 'Room Booking' and your requirements in the special requests.
+                        </li>
+                    </ul>
+                    <p class="price-note">
+                        All prices are indicative and exclusive of applicable taxes. For bespoke packages or specific inquiries, please mention them in the 'Special Requests' field or contact us directly.
+                    </p>
+                </div>
+                <form action="submit_booking.php" method="POST" class="booking-form">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g., John Doe" required />
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="e.g., john.doe@example.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="e.g., (555) 123-4567" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date"><i class="fas fa-calendar-alt"></i> Preferred Date</label>
+                            <input type="date" id="date" name="date" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="time"><i class="fas fa-clock"></i> Preferred Time</label>
+                            <input type="time" id="time" name="time" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="partySize"><i class="fas fa-users"></i> Party Size</label>
+                        <input type="number" id="partySize" name="partySize" placeholder="e.g., 4" required min="1" />
+                    </div>
+                    <div class="form-group">
+                        <label for="specialRequests"><i class="fas fa-comment-dots"></i> Special Requests (Optional)</label>
+                        <textarea id="specialRequests" name="specialRequests" placeholder="e.g., dietary restrictions, preferred seating"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Book Now <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Lanka Daily Foods. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Lanka Daily Foods. All rights reserved.</p>
+  </footer>

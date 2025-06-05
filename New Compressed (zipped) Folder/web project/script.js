@@ -4,76 +4,61 @@ const menuItems = [
     {
         id: 1,
         name: "Kottu Roti",
-        price: 350,
+        price: 600,
         category: "starters",
         description: "Sri Lankan stir-fried roti with vegetables and your choice of meat",
-        image: "https://source.unsplash.com/400x300/?kottu-roti"
+        image: "images/menu/kottu roti.jpg"
     },
     {
         id: 2,
         name: "Hoppers",
-        price: 200,
+        price: 100,
         category: "starters",
         description: "Crispy Sri Lankan bowl-shaped pancakes served with spicy sambol",
-        image: "https://source.unsplash.com/400x300/?hoppers"
+        image: "images/menu/hoppers.jpg"
     },
     {
         id: 3,
-        name: "Vada",
+        name: "Uludu Vada",
         price: 100,
         category: "starters",
         description: "Crispy lentil fritters served with coconut chutney",
-        image: "https://source.unsplash.com/400x300/?vada"
+        image: "images/menu/Medu-Vada.jpg"
     },
     {
         id: 4,
-        name: "Pani Pol",
+        name: "Pan Cake",
         price: 120,
         category: "starters",
         description: "Sweet coconut rolls with cardamom flavor",
-        image: "https://source.unsplash.com/400x300/?pani-pol"
+        image: "images/menu/pancake.jpg"
     },
-    {
-        id: 5,
-        name: "Kiri Hoppers",
-        price: 250,
-        category: "starters",
-        description: "Egg hoppers with coconut milk",
-        image: "https://source.unsplash.com/400x300/?kiri-hoppers"
-    },
-    {
-        id: 6,
-        name: "String Hoppers with Curry",
-        price: 280,
-        category: "starters",
-        description: "Steamed rice noodle cakes served with coconut curry",
-        image: "https://source.unsplash.com/400x300/?string-hoppers"
-    },
+  
     {
         id: 7,
         name: "Pol Sambol",
-        price: 150,
+        price: 80,
         category: "starters",
         description: "Fresh grated coconut salad with chili and lime",
-        image: "https://source.unsplash.com/400x300/?pol-sambol"
+        image: "images/menu/sambal.jpg"
     },
 
     // Main Courses
     {
         id: 8,
         name: "Rice & Curry Set",
-        price: 450,
+        price: 800,
         category: "mains",
         description: "Traditional Sri Lankan rice served with 3 curries and side dishes",
-        image: "https://source.unsplash.com/400x300/?rice-and-curry"
+        image: "images/menu/rice.jpg"
     },
     {
         id: 9,
         name: "Lamb Curry",
-        price: 600,
+        price: 400,
         category: "mains",
         description: "Slow-cooked tender lamb with aromatic spices",
-        image: "https://source.unsplash.com/400x300/?lamb-curry"
+        image: "images/menu/lamb.jpg"
     },
     {
         id: 10,
@@ -81,7 +66,7 @@ const menuItems = [
         price: 550,
         category: "mains",
         description: "Fresh fish cooked in coconut milk with traditional spices",
-        image: "https://source.unsplash.com/400x300/?fish-moilee"
+        image: "images/menu/fish.jpg"
     },
     {
         id: 11,
@@ -89,7 +74,7 @@ const menuItems = [
         price: 380,
         category: "mains",
         description: "Green jackfruit curry with coconut milk",
-        image: "https://source.unsplash.com/400x300/?polos-curry"
+        image: "images/menu/polos.jpg"
     },
     {
         id: 12,
@@ -97,7 +82,7 @@ const menuItems = [
         price: 220,
         category: "mains",
         description: "Traditional lentil curry with coconut milk",
-        image: "https://source.unsplash.com/400x300/?parippu"
+        image: "images/menu/parippu.jpg"
     },
     {
         id: 13,
@@ -105,7 +90,7 @@ const menuItems = [
         price: 180,
         category: "shorteats",
         description: "Steamed rice noodle cakes served with coconut sambol",
-        image: "https://source.unsplash.com/400x300/?string-hoppers"
+        image: "images/menu/shoppers.jpg"
     },
     {
         id: 14,
@@ -113,7 +98,7 @@ const menuItems = [
         price: 200,
         category: "shorteats",
         description: "Potato rice cakes with coconut sambol",
-        image: "https://source.unsplash.com/400x300/?kos-bath"
+        image: "images/menu/redrice.jpg"
     },
     {
         id: 15,
@@ -275,7 +260,7 @@ function loadMenuItems() {
             <div class="menu-item-content">
                 <h3>${item.name}</h3>
                 <p>${item.description}</p>
-                <span class="price">₹${item.price}</span>
+                <span class="price">Rs.${item.price}</span>
                 <button onclick="addToCart(${item.id})" class="add-to-cart">Add to Cart</button>
             </div>
         `;
@@ -318,7 +303,7 @@ function updateCart() {
             <img src="${item.image}" alt="${item.name}">
             <div class="cart-item-details">
                 <h3>${item.name}</h3>
-                <span class="price">₹${item.price}</span>
+                <span class="price">Rs.${item.price}</span>
                 <div class="quantity-control">
                     <button onclick="changeQuantity(${item.id}, -1)" class="quantity-btn">-</button>
                     <input type="number" 
@@ -335,9 +320,9 @@ function updateCart() {
     });
 
     // Update total in both cart and checkout
-    cartTotal.textContent = `₹${orderTotal.toFixed(2)}`;
+    cartTotal.textContent = `Rs.${orderTotal.toFixed(2)}`;
     if (checkoutTotal) {
-        checkoutTotal.textContent = `₹${orderTotal.toFixed(2)}`;
+        checkoutTotal.textContent = `Rs.${orderTotal.toFixed(2)}`;
     }
     
     // Save cart to localStorage
@@ -500,14 +485,14 @@ function checkout() {
                         ${cart.map(item => `
                             <div class="order-item">
                                 <span>${item.name}</span>
-                                <span>₹${item.price}</span>
+                                <span>Rs.${item.price}</span>
                                 <span>x ${item.quantity}</span>
-                                <span>₹${(item.price * item.quantity).toFixed(2)}</span>
+                                <span>Rs.${(item.price * item.quantity).toFixed(2)}</span>
                             </div>
                         `).join('')}
                         <div class="order-total">
                             <span>Total:</span>
-                            <span>₹${orderTotal.toFixed(2)}</span>
+                            <span>Rs.${orderTotal.toFixed(2)}</span>
                         </div>
                     </div>
                 </div>
@@ -712,7 +697,7 @@ function quickView(itemId) {
                 <div class="quick-view-details">
                     <h2>${item.name}</h2>
                     <p>${item.description}</p>
-                    <span class="price">₹${item.price}</span>
+                    <span class="price">Rs.${item.price}</span>
                     <button onclick="addToCart(${item.id})" class="cta-button">Add to Cart</button>
                 </div>
             </div>
@@ -746,7 +731,7 @@ function loadOrderSummaryPage() {
 
     if (storedCart.length === 0) {
         cartItemsSummaryContainer.innerHTML = '<p>Your order is currently empty. Please add items from the menu.</p>';
-        orderTotalElement.textContent = '₹0.00';
+        orderTotalElement.textContent = 'Rs.0.00';
         if(placeOrderBtn) placeOrderBtn.disabled = true; // Disable button if cart is empty
         return;
     }
@@ -767,7 +752,7 @@ function loadOrderSummaryPage() {
         const itemPriceElement = document.createElement('span');
         itemPriceElement.className = 'item-price';
         const subtotal = item.price * item.quantity;
-        itemPriceElement.textContent = `₹${subtotal.toFixed(2)}`;
+        itemPriceElement.textContent = `Rs.${subtotal.toFixed(2)}`;
         
         listItem.appendChild(itemNameElement);
         listItem.appendChild(itemPriceElement);
@@ -777,7 +762,7 @@ function loadOrderSummaryPage() {
     });
 
     cartItemsSummaryContainer.appendChild(ul);
-    orderTotalElement.textContent = `₹${currentTotal.toFixed(2)}`;
+    orderTotalElement.textContent = `Rs.${currentTotal.toFixed(2)}`;
 }
 
 // Close cart button

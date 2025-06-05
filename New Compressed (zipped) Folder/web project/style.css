@@ -97,11 +97,17 @@ body {
 .hero h1 {
     font-size: 3.8rem; /* Larger hero title */
     font-weight: 700;
+    color:rgb(1, 165, 1);
+    text-shadow: 2px 2px 4px rgba(155, 153, 153, 0.938); /* Subtle shadow for better readability */
 }
 
 .hero p {
     font-size: 1.3rem; /* Larger hero subtitle */
     margin-bottom: 2rem;
+    color:rgb(236, 233, 233);
+    font-family:comic sans ms;
+    text-shadow: 1px 1px 3px rgba(155, 153, 153, 0.938); /* Subtle shadow for better readability */
+    font-style: italic;
 }
 
 .cta-button {
@@ -573,6 +579,8 @@ body {
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
+    color: var(--text-color);
+    background-color: rgba(0,0,0,0.1);
 }
 
 .filter-btn.active {
@@ -580,6 +588,13 @@ body {
     color: white;
 }
 
+.filter-btn:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.filter-btn.active:hover {
+    background-color:  rgb(76, 175, 80,0.8);
+}
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

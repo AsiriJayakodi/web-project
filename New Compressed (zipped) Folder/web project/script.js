@@ -29,7 +29,7 @@ const menuItems = [
         id: 4,
         name: "Pan Cake",
         price: 120,
-        category: "starters",
+        category: "shorteats",
         description: "Sweet coconut rolls with cardamom flavor",
         image: "images/menu/pancake.jpg"
     },
@@ -81,41 +81,41 @@ const menuItems = [
         name: "Parippu",
         price: 220,
         category: "mains",
-        description: "Traditional lentil curry with coconut milk",
+        description: "Traditional dhal curry with coconut milk",
         image: "images/menu/parippu.jpg"
     },
     {
         id: 13,
         name: "String Hoppers",
-        price: 180,
+        price: 120,
         category: "shorteats",
         description: "Steamed rice noodle cakes served with coconut sambol",
         image: "images/menu/shoppers.jpg"
     },
     {
         id: 14,
-        name: "Kos Bath",
-        price: 200,
-        category: "shorteats",
-        description: "Potato rice cakes with coconut sambol",
+        name: "Red Rice",
+        price: 400,
+        category: "starters",
+        description: "Red Rice with spices and curries",
         image: "images/menu/redrice.jpg"
     },
     {
         id: 15,
-        name: "Kade Bath",
-        price: 220,
-        category: "shorteats",
-        description: "Rice cakes with coconut sambol",
-        image: "https://source.unsplash.com/400x300/?kade-bath"
+        name: "Kaha Bath",
+        price: 450,
+        category: "starters",
+        description: "Yellow rice cooked with turmeric and coconut milk",
+        image: "images/menu/kahabath.jpg"
     },
     // Desserts
     {
         id: 20,
-        name: "Kiri Kanda",
+        name: "Coconut Pudding",
         price: 150,
         category: "desserts",
         description: "Coconut milk pudding with cardamom",
-        image: "https://source.unsplash.com/400x300/?kiri-kanda"
+        image: "images/menu/coconutpudding.jpg"
     },
     {
         id: 21,
@@ -123,65 +123,65 @@ const menuItems = [
         price: 150,
         category: "desserts",
         description: "Traditional Sri Lankan coconut milk pudding with spices",
-        image: "https://source.unsplash.com/400x300/?watalappam"
+        image: "images/menu/watalappan.jpg"
     },
     {
         id: 22,
-        name: "Kavum",
+        name: "Ice Cream",
         price: 100,
         category: "desserts",
-        description: "Deep-fried sweet coconut rice flour cake",
-        image: "https://source.unsplash.com/400x300/?kavum"
+        description: "Creamy chocolate ice cream with a hint of cardamom",
+        image: "images/menu/icecream.jpg"
     },
     {
         id: 23,
-        name: "Halape",
+        name: "Curd and Treacle",
         price: 180,
         category: "desserts",
-        description: "Sweet coconut and jaggery dessert with cardamom",
-        image: "https://source.unsplash.com/400x300/?halape"
+        description: "Traditional Sri Lankan curd served with kithul treacle",
+        image: "images/menu/curd2.jpg"
     },
     {
         id: 24,
-        name: "Kiri Kanda",
-        price: 150,
-        category: "desserts",
-        description: "Coconut milk jelly with pandan flavor",
-        image: "https://source.unsplash.com/400x300/?kiri-kanda"
+        name: "Samosa",
+        price: 80,
+        category: "shorteats",
+        description: "Crispy pastry filled with spiced potatoes and peas",
+        image: "images/menu/samosa.jpg"
     },
     {
         id: 25,
-        name: "Kalu Dodol",
-        price: 200,
+        name: "Jelly",
+        price: 100,
         category: "desserts",
-        description: "Traditional Sri Lankan sweet made with rice flour and coconut",
-        image: "https://source.unsplash.com/400x300/?kalu-dodol"
+        description: "Colorful fruit jelly with a hint of coconut",
+        image: "images/menu/jelly2.jpg"
     },
     {
         id: 26,
-        name: "Kiri Pani",
+        name: "Cake",
         price: 120,
         category: "desserts",
-        description: "Sweet coconut milk pudding served cold",
-        image: "https://source.unsplash.com/400x300/?kiri-pani"
+        description: "Delicious chocolate cake with a rich frosting",
+        image: "images/menu/kake.jpg"
     },
 
     // Drinks
     {
         id: 27,
-        name: "King Coconut Water",
+        name: "Mango Drink",
         price: 150,
         category: "drinks",
-        description: "Fresh king coconut water with natural sweetness",
-        image: "https://source.unsplash.com/400x300/?coconut-water"
+        description: "Refreshing mango drink with a hint of lime",
+        image: "images/menu/mago.jpg"
     },
     {
         id: 28,
-        name: "Lemon Tea",
-        price: 100,
+        name: "Falooda",
+        price: 180,
         category: "drinks",
-        description: "Freshly brewed tea with lemon and honey",
-        image: "https://source.unsplash.com/400x300/?lemon-tea"
+        description: "Refreshing dessert drink with vermicelli, basil seeds, and rose syrup",
+        image: "images/menu/falooda.jpg"
     },
     {
         id: 29,
@@ -189,31 +189,31 @@ const menuItems = [
         price: 120,
         category: "drinks",
         description: "Traditional yogurt drink with mango flavor",
-        image: "https://source.unsplash.com/400x300/?lassi"
+        image: "images/menu/lassi.jpg"
     },
     {
         id: 30,
-        name: "Kithul Toddy",
+        name: "Milk Shake",
         price: 180,
         category: "drinks",
-        description: "Traditional palm sap drink with natural sweetness",
-        image: "https://source.unsplash.com/400x300/?kithul-toddy"
+        description: "Creamy milkshake with your choice of flavor",
+        image: "images/menu/milkshake.webp"
     },
     {
         id: 31,
-        name: "King Coconut Toddy",
-        price: 200,
+        name: "Bubble Tea",
+        price: 300,
         category: "drinks",
-        description: "Fresh coconut sap drink with natural sweetness",
-        image: "https://source.unsplash.com/400x300/?king-coconut-toddy"
+        description: "Sweet and chewy bubble tea with tapioca pearls",
+        image: "images/menu/bubbletea.webp"
     },
     {
         id: 32,
         name: "Palm Juice",
-        price: 150,
+        price: 170,
         category: "drinks",
         description: "Fresh palm tree sap drink with natural sweetness",
-        image: "https://source.unsplash.com/400x300/?palm-juice"
+        image: "images/menu/palm.jpg"
     }
 ];
     
